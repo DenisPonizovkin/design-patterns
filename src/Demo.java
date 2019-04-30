@@ -1,4 +1,7 @@
 import adapter.*;
+import bridge.MySQL;
+import bridge.PostgreSQL;
+import bridge.Selector;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +17,15 @@ public class Demo {
     public static void main(String[] args) {
         demoFacade();
         demoAdapterRealisation();
+        demoBridge();
+    }
+
+    private static void demoBridge() {
+        Selector ps = new Selector(new PostgreSQL());
+        Selector ms = new Selector(new MySQL());
+
+        ps.select();
+        ms.select();
     }
 
     private static void demoAdapterRealisation() {
