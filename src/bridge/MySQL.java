@@ -1,6 +1,6 @@
 package bridge;
 
-public class MySQL implements DbProcessorImpl {
+public class MySQL implements DbProcessorRealisation {
     @Override
     public String createConnectStrnig() {
         return this.getClass().getName() + ": create connect string";

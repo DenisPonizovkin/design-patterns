@@ -1,6 +1,6 @@
 package bridge;
 
-public class PostgreSQL implements DbProcessorImpl {
+public class PostgreSQL implements DbProcessorRealisation {
     @Override
     public String createConnectStrnig() {
         return this.getClass().getName() + ": create connect string";

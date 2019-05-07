@@ -1,10 +1,10 @@
 package bridge;
 
-public abstract class DbProcessor {
+public abstract class DbProcessorAbstract {
 
-    private final DbProcessorImpl mBridge;
+    private final DbProcessorRealisation mBridge;
 
-    public DbProcessor(DbProcessorImpl impl) {
+    public DbProcessorAbstract(DbProcessorRealisation impl) {
         mBridge = impl;
     }
 

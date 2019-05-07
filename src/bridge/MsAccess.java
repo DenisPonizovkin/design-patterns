@@ -1,6 +1,6 @@
 package bridge;
 
-public class MsAccess implements DbProcessorImpl {
+public class MsAccess implements DbProcessorRealisation {
     @Override
     public String createConnectStrnig() {
         return this.getClass().getName() + ": create connect string";

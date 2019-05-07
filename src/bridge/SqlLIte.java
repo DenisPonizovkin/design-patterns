@@ -1,6 +1,6 @@
 package bridge;
 
-public class SqlLIte implements DbProcessorImpl {
+public class SqlLIte implements DbProcessorRealisation {
     @Override
     public String createConnectStrnig() {
         return this.getClass().getName() + ": create connect string";

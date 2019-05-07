@@ -1,7 +1,7 @@
 package bridge;
 
-public class Selector extends DbProcessor {
-    public Selector(DbProcessorImpl impl) {
+public class Selector extends DbProcessorAbstract {
+    public Selector(DbProcessorRealisation impl) {
         super(impl);
     }
 
