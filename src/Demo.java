@@ -2,6 +2,8 @@ import adapter.*;
 import bridge.MySQL;
 import bridge.PostgreSQL;
 import bridge.Selector;
+import decorator.SensorBoardDecorator;
+import decorator.TemperatureSensor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +16,24 @@ public class Demo {
         System.out.println("=====================================");
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         demoFacade();
         demoAdapterRealisation();
         demoBridge();
+        demoDecorator();
+    }
+
+    private static void demoDecorator() throws Exception {
+        System.out.println("\n============ DEMO FACADE ============");
+        {
+            SensorBoardDecorator sbd = new SensorBoardDecorator(new TemperatureSensor());
+            sbd.read();
+        }
+        {
+            SensorBoardDecorator sbd = new SensorBoardDecorator();
+            sbd.request("humidity");
+        }
+        System.out.println("=====================================");
     }
 
     private static void demoBridge() {
